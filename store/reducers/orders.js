@@ -13,7 +13,6 @@ export default (state = initialState, action) => {
                 action.orderData.items,
                 action.orderData.amount,
                 new Date()
-                
             );
             return {
                 ...state,
