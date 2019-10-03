@@ -14,11 +14,11 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-      case SET_PRODUCTS:
-          return {
-            availableProducts: action.products,
-            userProducts: action.products.filter(prod => prod.ownerId === 'u1')
-          };
+    case SET_PRODUCTS:
+      return {
+        availableProducts: action.products,
+        userProducts: action.products.filter(prod => prod.ownerId === 'u1')
+      };
     case CREATE_PRODUCT:
       const newProduct = new Product(
         action.productData.id,

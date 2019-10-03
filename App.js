@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { StyleSheet } from 'react-native';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { AppLoading } from 'expo';
@@ -31,27 +30,17 @@ export default function App() {
 
   if (!fontLoaded) {
     return (
-      <AppLoading 
-        startAsync={fetchFonts} 
+      <AppLoading
+        startAsync={fetchFonts}
         onFinish={() => {
           setFontLoaded(true);
-        }} 
+        }}
       />
     );
   }
-
   return (
     <Provider store={store}>
       <ShopNavigator />
     </Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
